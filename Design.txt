@@ -1,0 +1,37 @@
+Tic Tac Toe game
+
+User model
+
+  Additional properties to User model:
+    * played_game: how many games played the user
+    * score: all the points the user win - Win is 2 points, Tie is 1
+    * performance: the value of (score / played_game) to ranking users
+
+TicTac model
+
+  Additional properties to TicTac(former Game) model:
+    * board: store the state of the game in 9 length string
+    * user_start: if it is True, the user will start the game
+    * user_steps: step counter
+    * cancelled: Is the game cancelled
+    * winner: who is the winner the user, or the app
+    * last_step: the date of the last move
+
+  Additional methods:
+    * legal_moves_str(board): get the empty places
+    * is_legal_moves(board, move): is the move legal, is the place free
+    * make_a_move(board, move): Makes a move. Check the move is legal, is the user or the app win, is it tied. If the game is not over, the app moves. Storing the states of the game in History.
+
+  Changed method:
+    * end_game: Storing the last state of the game, and updating the user's performance
+
+History model
+  To store the states of the game. Associated with TicTac model via KeyProperty.
+
+The implementation
+    Choosing single player Tic Tac Toe game to implement, I've added tictac.py to the app. It contains TicTacToe class to implement the game logic.
+    I've relocated the move to the model to separete more clearly the model and the interface.
+
+Trade-offs or struggles:
+    * game status print: for reading the status of a game would be nicer if it prints in a 3x3 grid, but that would be more difficult to display (for example in html). So I've chosen a splitted (by |) method: 'X  |XO |O X'
+    * Ranking users: the 'performance' record is redundant, because it is only used to store the value of (score / played_game). But is is neccessary to retrieve users in ranking order.
