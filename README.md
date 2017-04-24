@@ -1,22 +1,29 @@
-#Full Stack Nanodegree Project 4 Refresh
+# Tic Tac Toe game in Google App Engine with Endpoints
+
+## API availability 
+You can explore the API at [Google App Engine](http://jv-tictactoe.appspot.com/_ah/api/explorer).
 
 ## Set-Up Instructions:
-1.  Update the value of application in app.yaml to the app ID you have registered
+1. Clone this repository 
+```
+git clone https://github.com/janosvincze/TicTacToe YOUR_DIRECTORY
+```
+2.  Update the value of application in app.yaml to the app ID you have registered
  in the App Engine admin console and would like to use to host your instance of this sample.
-1.  Run the app with the devserver using dev_appserver.py DIR, and ensure it's
+3.  Run the app with the devserver using dev_appserver.py DIR, and ensure it's
  running by visiting the API Explorer - by default localhost:8080/_ah/api/explorer.
-1.  (Optional) Generate your client library(ies) with the endpoints tool.
+4.  (Optional) Generate your client library(ies) with the endpoints tool.
  Deploy your application.
 
 
 
-##Game Description:
+## Game Description:
 Tic Tac Toe is a simple two player game. Player can hold places one-by-one in a 3x3 grid. Who can place three in a row, will be the winner.
 In this application players can play with 'the computer'. After every step the applictaion move automatically and write out the actual state.
 Many different Tic Tac Toe games can be played by many different Users at any given time. Each game can be retrieved or played by using the path parameter
 `urlsafe_game_key`.
 
-##Files Included:
+## Files:
  - tictac.py: TicTacToe class representing the game.
  - api.py: Contains endpoints and game playing logic.
  - app.yaml: App configuration.
@@ -25,7 +32,7 @@ Many different Tic Tac Toe games can be played by many different Users at any gi
  - models.py: Entity and message definitions including helper methods.
  - utils.py: Helper function for retrieving ndb.Models by urlsafe Key string.
 
-##Endpoints Included:
+## Endpoints:
  - **create_user**
     - Path: 'user'
     - Method: POST
